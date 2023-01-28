@@ -1,0 +1,16 @@
+---
+spellchecker: hunspell
+matrix:
+- name: markdown
+  pipeline:
+  - pyspelling.filters.markdown:
+  - pyspelling.filters.html:
+      ignores:
+      - code
+      - pre
+  sources:
+  - '**/*.md'
+  default_encoding: utf-8
+  dictionary:
+    wordlists:
+    - dictionary.txt
