@@ -1,4 +1,9 @@
+CoreOS
+EKS
+GitLab
+iPXE
 kapp
+k3s
 Kickstart
 Kubernetes
 Kustomize
@@ -7,6 +12,9 @@ Microservice
 microservices
 Minecraft
 orchestrator
+PXE
+RHEL
 systemd
+TKG
 Warfighters
 ytt
