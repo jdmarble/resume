@@ -18,6 +18,19 @@ jobs:
           image: there4/markdown-resume:2.3.1
           options: -v ${{ github.workspace }}:/resume:z
           run: md2resume html --template readable resume.md ./public
+      - name: Patch HTML
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "http://"
+          replace: "https://"
+          regex: false
+          include: "public/*.html"
+      - name: Build PDF
+        uses: addnab/docker-run-action@v3
+        with:
+          image: there4/markdown-resume:2.3.1
+          options: -v ${{ github.workspace }}:/resume:z
+          run: md2resume pdf --template readable resume.md ./public
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
