@@ -14,8 +14,8 @@ Render as HTML and PDF using [`markdown-resume`](https://github.com/there4/markd
 
 ```sh
 mkdir public
-podman run -v ${PWD}:/resume there4/markdown-resume md2resume html --template readable resume.md ./public
-podman run -v ${PWD}:/resume there4/markdown-resume md2resume pdf --template readable resume.md ./public
+podman run -v ${PWD}:/resume:z there4/markdown-resume md2resume html --template readable resume.md ./public
+podman run -v ${PWD}:/resume:z there4/markdown-resume md2resume pdf --template readable resume.md ./public
 ```
 
 Check for leaking metadata:
