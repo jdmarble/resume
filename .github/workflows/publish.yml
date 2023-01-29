@@ -25,6 +25,8 @@ jobs:
           replace: "https://"
           regex: false
           include: "public/*.html"
+      - name: Move to index
+        run: mv ./public/resume.html ./public/index.html
       - name: Build PDF
         uses: addnab/docker-run-action@v3
         with:
@@ -35,3 +37,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: public
+          single-commit: true
