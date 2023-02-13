@@ -19,7 +19,7 @@ jobs:
           options: -v ${{ github.workspace }}:/resume:z
           run: md2resume html --template readable resume.md ./public
       - name: Patch HTML
-        uses: jacobtomlinson/gha-find-replace@v2
+        uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: "http://"
           replace: "https://"
